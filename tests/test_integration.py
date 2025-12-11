@@ -66,6 +66,43 @@ def test_that_two_todo_tasks_are_added_to_todo_list_as_complete():
 
 """
 Upon addition of two Todo tasks
+Check that one task is added to the complete list
+when marked as complete and
+that one task reamins on the incomplete list
+"""
+
+def test_that_one_of_two_todo_tasks_is_added_to_todo_list_as_complete():
+    todo_list = TodoList()
+    todo_task1 = Todo("Task 1")
+    todo_list.add(todo_task1)
+    todo_task1.mark_complete()
+    todo_task2 = Todo("Task 2")
+    todo_list.add(todo_task2)
+    actual = todo_list.complete()
+    expected = ["Task 1"]
+    assert actual == expected
+
+"""
+Upon addition of two Todo tasks
+Check that one task is added to the complete list
+when marked as complete and
+that one task reamins on the incomplete list
+"""
+
+def test_that_one_of_two_todo_tasks_is_added_to_todo_list_as_incomplete():
+    todo_list = TodoList()
+    todo_task1 = Todo("Task 1")
+    todo_list.add(todo_task1)
+    todo_task1.mark_complete()
+    todo_task2 = Todo("Task 2")
+    todo_list.add(todo_task2)
+    actual = todo_list.incomplete()
+    expected = ["Task 2"]
+    assert actual == expected
+
+
+"""
+Upon addition of two Todo tasks
 Check that tasks are not present on the incomplete list
 when marked as complete
 """

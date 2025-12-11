@@ -8,7 +8,7 @@ Add task to self_task
 
 def test_add_task():
     todo = Todo("Test task")
-    actual = todo._task
+    actual = todo.task
     expected = "Test task"
     assert actual == expected
 
@@ -19,7 +19,7 @@ Set complete to false
 """
 def test_complete_is_false():
     todo = Todo("Test task")
-    actual = todo._complete
+    actual = todo.complete
     expected = False
     assert actual == expected
 
@@ -41,6 +41,6 @@ Set complete to True
 def test_complete_is_true():
     todo = Todo("Test task")
     todo.mark_complete()
-    actual = todo._complete
+    actual = todo.complete
     expected = True
     assert actual == expected
